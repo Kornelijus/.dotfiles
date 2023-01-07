@@ -1,6 +1,6 @@
-# If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo:$PATH
 
 export GOPATH=$HOME/.local/go
 export PATH=$GOPATH/bin:$PATH
@@ -40,14 +40,9 @@ ENABLE_CORRECTION="true"
 
 HIST_STAMPS="yyyy-mm-dd"
 
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git pyenv poetry)
-
-# export MANPATH="/usr/local/man:$MANPATH"
-# export LANG=en_US.UTF-8
-# export ARCHFLAGS="-arch x86_64"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR="vim"
