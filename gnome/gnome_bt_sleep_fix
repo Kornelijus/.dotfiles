@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Fix for Gnome issue where Bluetooth 
+# is stuck as disabled after sleep / suspend.
+# https://bbs.archlinux.org/viewtopic.php?id=130995
+
+# Must run as root / sudo
+[ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
+
+rmmod btusb
+modprobe btusb
