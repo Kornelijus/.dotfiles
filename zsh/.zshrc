@@ -8,6 +8,9 @@ export PATH=$GOPATH/bin:$PATH
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
+export ROCM_PATH=/opt/rocm
+export PATH=$ROCM_PATH/bin:$PATH
+
 ZSH=/usr/share/oh-my-zsh/
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -65,9 +68,15 @@ if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
 fi
 
+# github copilot cli preview
+# if command -v github-copilot-cli &> /dev/null; then
+#   eval "$(github-copilot-cli alias -- "$0")"
+# fi
+
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
 source $ZSH/oh-my-zsh.sh
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
